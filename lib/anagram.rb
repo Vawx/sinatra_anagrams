@@ -2,6 +2,7 @@
 class String
   define_method(:check_for_anagrams) do |possibilities|
     found_anagrams = ""
+    possibilities = possibilities.split(" ")
     possibilities.each do |word|
       if is_anagram( word )
         found_anagrams += word + " "

@@ -9,5 +9,8 @@ get('/') do
 end
 
 get('/anagram') do
+  @entered_word = params.fetch('word')
+  @potential_matches = params.fetch('matching')
+  @anagrams = @entered_word.check_for_anagrams( @potential_matches )
   erb(:anagram)
 end
